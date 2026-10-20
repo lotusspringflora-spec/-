@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>國中會考英文片語總整理</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/night.css" />
+  <style>
+    :root {
+      --accent:  #e8643a;
+      --accent2: #4fc3f7;
+      --success: #81c784;
+      --warn:    #ffb74d;
+    }
+    .reveal { font-family: 'Segoe UI', 'PingFang TC', 'Noto Sans TC', sans-serif; }
+
+    /* ===== 漸層底圖（零生圖）===== */
+    .reveal .bg-aurora{
+      background:
+        radial-gradient(60% 80% at 20% 20%, rgba(79,195,247,.25), transparent 60%),
+        radial-gradient(50% 70% at 80% 70%, rgba(232,100,58,.22), transparent 60%),
+        linear-gradient(135deg, #0d1117, #1a1a2e);
+    }
+    .reveal .bg-soft{
+      background:
+        radial-gradient(50% 60% at 85% 15%, rgba(79,195,247,.12), transparent 60%),
+        linear-gradient(160deg, #0d1117, #161b22);
+    }
+    .reveal h1, .reveal h2, .reveal h3 { font-weight: 700; letter-spacing: -0.02em; }
+    .reveal h1 { font-size: 2.05em; }
+    .reveal h2 { font-size: 1.35em; color: var(--accent2); margin-bottom: .4em; }
+    .reveal h3 { font-size: .95em; color: var(--accent); }
+    .reveal .progress { color: var(--accent); }
+    .reveal .fragment { opacity: 0.2; }
+    .reveal .fragment.visible { opacity: 1; }
+
+    /* ===== 封面 / 封底 ===== */
+    .title-slide { text-align: center; }
+    .title-slide .tag {
+      display: inline-block; background: var(--accent); color: #fff;
+      padding: 5px 16px; border-radius: 20px; font-size: .5em;
+      letter-spacing: .08em; margin-bottom: .8em; font-weight: 600;
+    }
+    .title-slide .subtitle { font-size: .72em; color: #aab; margin-top: .5em; }
+    .title-slide .author { margin-top: 1.8em; font-size: .46em; color: #889; }
+    .end-slide { text-align: center; }
+    .end-slide .big { font-size: 3em; margin-bottom: .1em;
+      filter: drop-shadow(0 0 24px rgba(232,100,58,.7)); }
+    .end-slide .tagline { font-size: .6em; color: #bbb; line-height: 1.7; }
+
+    /* ===== 統計卡 ===== */
+    .stat-row { display: flex; gap: 14px; justify-content: center; margin-top: .7em; }
+    .stat-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15);
+      border-radius: 12px; padding: 16px 10px; text-align: center; flex: 1;
+    }
+    .stat-card .num { font-size: 1.7em; font-weight: 800; color: var(--accent); line-height: 1.1; }
+    .stat-card .label { font-size: .4em; color: #ccc; margin-top: 6px; }
+
+    /* ===== 圖標卡 ===== */
+    .adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: .45em; }
+    .adv-grid.c3 { grid-template-columns: 1fr 1fr 1fr; }
+    .adv-grid.c4 { grid-template-columns: repeat(4, 1fr); }
+    .adv-card {
+      background: rgba(255,255,255,.05); border-top: 4px solid var(--accent2);
+      border-radius: 8px; padding: 12px 10px; text-align: center;
+    }
+    .adv-card.orange { border-top-color: var(--accent); }
+    .adv-card.green  { border-top-color: var(--success); }
+    .adv-card.amber  { border-top-color: var(--warn); }
+    .adv-card .adv-icon { font-size: 1.7em; margin-bottom: 4px;
+      filter: drop-shadow(0 0 8px rgba(79,195,247,.55)); }
+    .adv-card .adv-title { font-size: .55em; font-weight: 700; color: var(--accent2); margin-bottom: 5px; }
+    .adv-card.orange .adv-title { color: var(--accent); }
+    .adv-card.green  .adv-title { color: var(--success); }
+    .adv-card.amber  .adv-title { color: var(--warn); }
+    .adv-card .adv-desc { font-size: .4em; color: #ccd; line-height: 1.55; }
+    .adv-card .adv-desc b { color: #fff; }
+
+    /* ===== 表格式片語 ===== */
+    .ptable { width: 100%; border-collapse: collapse; font-size: .46em; margin-top: .3em; }
+    .ptable th {
+      background: rgba(79,195,247,.18); color: #fff; text-align: left;
+      padding: 7px 9px; border: 1px solid rgba(255,255,255,.16);
+    }
+    .ptable td { padding: 6px 9px; border: 1px solid rgba(255,255,255,.12); color: #dde; }
+    .ptable tr:nth-child(even) td { background: rgba(255,255,255,.04); }
+    .ptable b { color: var(--warn); }
+
+    /* ===== VS 對比 ===== */
+    .vs-grid { display: grid; grid-template-columns: 1fr 54px 1fr; align-items: start; margin-top: .4em; }
+    .vs-col { background: rgba(255,255,255,.05); border-radius: 12px; padding: 14px 16px; }
+    .vs-col.left-col  { border-top: 3px solid var(--accent2); }
+    .vs-col.right-col { border-top: 3px solid var(--warn); }
+    .vs-label { font-size: .62em; font-weight: 700; margin-bottom: 8px; }
+    .vs-label.left  { color: var(--accent2); }
+    .vs-label.right { color: var(--warn); }
+    .vs-center { display: flex; align-items: center; justify-content: center;
+      font-size: 1.2em; font-weight: 900; color: #667; }
+    .vs-col ul { font-size: .46em; list-style: none; padding: 0; margin: 0; }
+    .vs-col ul li { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.07); color: #dde; }
+    .vs-col ul li:last-child { border-bottom: none; }
+    .vs-col ul li::before { content: "✦ "; opacity: .5; }
+    .vs-col ul li b { color: var(--warn); }
+
+    /* ===== 提示框 / 例句 ===== */
+    .tip {
+      background: rgba(129,199,132,.12); border-left: 4px solid var(--success);
+      border-radius: 0 8px 8px 0; padding: 10px 16px; font-size: .48em;
+      color: #dff5e0; margin-top: .5em; line-height: 1.65; text-align: left;
+    }
+    .tip b { color: var(--success); }
+    .ex-box {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px; padding: 9px 15px; font-size: .46em; color: #dde;
+      margin-top: .5em; text-align: left; line-height: 1.7;
+    }
+    .ex-box b { color: var(--warn); }
+    .ex-box .zh { color: #99a; font-size: .92em; }
+
+    /* ===== 章節頁 ===== */
+    .chap { text-align: center; }
+    .chap .no { font-size: .55em; color: var(--accent); letter-spacing: .3em; font-weight: 700; }
+    .chap .big-ico { font-size: 3.2em; margin: .12em 0;
+      filter: drop-shadow(0 0 26px rgba(79,195,247,.65)); }
+    .chap h1 { color: #fff; }
+    .chap .desc { font-size: .5em; color: #aab; margin-top: .5em; }
+
+    /* ===== 投影片編號底 ===== */
+    .sec-no {
+      display: inline-block; background: var(--accent); color: #fff; font-size: .38em;
+      padding: 3px 11px; border-radius: 12px; font-weight: 700; margin-bottom: 6px;
+      letter-spacing: .08em;
+    }
+
+    /* ===== 快問快答 ===== */
+    .quiz-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14);
+      border-radius: 10px; padding: 11px 15px; margin-bottom: 9px;
+      font-size: .46em; text-align: left; line-height: 1.6;
+    }
+    .quiz-card .qs { font-weight: 700; color: #fff; }
+    .quiz-card .qs em { font-style: normal; color: var(--accent); }
+    .quiz-card .opts { color: #ccd; margin-top: 3px; }
+    .quiz-card .opts b { color: var(--accent2); }
+    .quiz-card .ans {
+      display: inline-block; margin-top: 5px; background: rgba(129,199,132,.18);
+      color: var(--success); font-weight: 700; padding: 2px 10px; border-radius: 10px;
+      font-size: .95em;
+    }
+
+    /* ===== 速記清單 ===== */
+    .memo { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin-top: .3em; }
+    .memo div {
+      font-size: .36em; background: rgba(255,255,255,.05);
+      border-left: 3px solid var(--accent2); padding: 4px 9px;
+      border-radius: 0 6px 6px 0; color: #dde;
+    }
+    .end-slide .big.sm { font-size: 2.1em; }
+    .end-slide .tagline.sm { font-size: .48em; margin-top: .45em !important; }
+    .memo div b { color: var(--warn); }
+
+    /* ===== VIZ 滑桿 ===== */
+    .viz-wrap { margin-top: .4em; }
+    .viz-box { position: relative; height: 300px; border-radius: 12px; overflow: hidden; }
+    .viz-layer { position: absolute; inset: 0; padding: 44px 26px 20px; }
+    .viz-layer h3 { margin: 0 0 12px; font-size: .72em; }
+    /* 底層（before）：不透明鋪滿，只顯示分隔線以下，文字不會被透出 */
+    .viz-layer.before {
+      background: linear-gradient(150deg, #1b2430, #26313d);
+      clip-path: inset(0 0 0 0);
+      z-index: 1;
+    }
+    /* 上層（after）：不透明，只顯示分隔線以上；初始完全裁掉 */
+    .viz-layer.after {
+      background: linear-gradient(150deg, #10344a, #123f36);
+      clip-path: inset(0 0 100% 0);
+      z-index: 2;
+    }
+    /* 掃描帶：水平遮罩帶，吸附在行與行之間，不會切到文字 */
+    .viz-divider {
+      position: absolute; left: 0; top: 0; width: 100%; height: 18px;
+      transform: translateY(-50%); z-index: 5; pointer-events: none;
+      background: linear-gradient(180deg,
+        rgba(9,13,19,0) 0%, rgba(9,13,19,.92) 30%,
+        rgba(9,13,19,.92) 70%, rgba(9,13,19,0) 100%);
+    }
+    .viz-divider::after {
+      content: ''; position: absolute; left: 0; right: 0; top: 50%;
+      height: 2px; margin-top: -1px;
+      background: linear-gradient(90deg, transparent, #4fc3f7 12%, #4fc3f7 88%, transparent);
+      box-shadow: 0 0 10px #4fc3f7;
+    }
+    /* 角落標籤：各自放進該層內，隨裁切一起顯示／隱藏，不會互相疊字 */
+    .viz-tag {
+      position: absolute; font-size: .38em; font-weight: 700;
+      padding: 3px 10px; border-radius: 10px; z-index: 6;
+    }
+    .viz-layer.before .viz-tag { right: 12px; bottom: 12px; background: rgba(232,100,58,.9); }
+    .viz-layer.after  .viz-tag { left: 12px;  top: 12px;   background: rgba(79,195,247,.9); color: #063; }
+    .viz-slider { width: 100%; margin-top: 12px; accent-color: #4fc3f7; }
+    .viz-hint { font-size: .38em; color: #889; text-align: center; margin-top: 4px; }
+    .rule-list { font-size: .46em; line-height: 1.9; color: #dde; text-align: left; }
+    .rule-list b { color: var(--warn); }
+    .rule-list .k { color: var(--accent2); font-weight: 700; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ============ 1. 封面 ============ -->
+    <section class="bg-aurora">
+      <div class="title-slide">
+        <div class="tag">國中會考 · 英語文</div>
+        <h1>片語總整理</h1>
+        <h2 style="color:var(--accent); margin-top:.15em;">七大分類一次搞定</h2>
+        <p class="subtitle">名詞片語｜動詞片語｜介係詞片語｜形容詞片語｜副詞片語｜常考句型</p>
+        <p class="author">依 108 課綱會考命題趨勢編製 · 共 17 張投影片</p>
+      </div>
+    </section>
+
+    <!-- ============ 2. 學習地圖 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">學習地圖</span>
+      <h2>這份講義怎麼讀？</h2>
+      <div class="adv-grid c3">
+        <div class="adv-card fragment">
+          <div class="adv-icon">📚</div>
+          <div class="adv-title">名詞片語</div>
+          <div class="adv-desc">不定量、容器量詞<br><b>a lot of / a piece of</b></div>
+        </div>
+        <div class="adv-card orange fragment">
+          <div class="adv-icon">⚡</div>
+          <div class="adv-title">動詞片語</div>
+          <div class="adv-desc">look / take / get 系列<br><b>phrasal verbs</b></div>
+        </div>
+        <div class="adv-card green fragment">
+          <div class="adv-icon">📍</div>
+          <div class="adv-title">介係詞片語</div>
+          <div class="adv-desc">時間、地點、交通<br><b>at / on / in / by</b></div>
+        </div>
+        <div class="adv-card amber fragment">
+          <div class="adv-icon">🎯</div>
+          <div class="adv-title">形容詞片語</div>
+          <div class="adv-desc">be + 形容詞 + 介係詞<br><b>be good at</b></div>
+        </div>
+        <div class="adv-card fragment">
+          <div class="adv-icon">🔗</div>
+          <div class="adv-title">副詞片語</div>
+          <div class="adv-desc">連接副詞、時間副詞<br><b>however / therefore</b></div>
+        </div>
+        <div class="adv-card orange fragment">
+          <div class="adv-icon">🧩</div>
+          <div class="adv-title">常考句型</div>
+          <div class="adv-desc">It takes… / too…to<br><b>sentence patterns</b></div>
+        </div>
+      </div>
+      <div class="stat-row fragment">
+        <div class="stat-card"><div class="num">6</div><div class="label">大分類</div></div>
+        <div class="stat-card"><div class="num">120<span style="font-size:.5em">+</span></div><div class="label">精選片語</div></div>
+        <div class="stat-card"><div class="num">50</div><div class="label">題測驗卷</div></div>
+        <div class="stat-card"><div class="num">20</div><div class="label">考前速記</div></div>
+      </div>
+    </section>
+
+    <!-- ============ 3. 章節：名詞片語 ============ -->
+    <section class="bg-aurora">
+      <div class="chap">
+        <div class="no">PART 01</div>
+        <div class="big-ico">📚</div>
+        <h1>名詞片語</h1>
+        <p class="desc">Noun Phrases ／ 不定量 · 容器量詞 · 片語組成</p>
+      </div>
+    </section>
+
+    <!-- ============ 4. 不定量片語 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">名詞片語 1/2</span>
+      <h2>不定量片語：可數／不可數是關鍵</h2>
+      <table class="ptable">
+        <tr><th style="width:26%">片語</th><th style="width:30%">意思</th><th>例句</th></tr>
+        <tr class="fragment"><td><b>a lot of / plenty of</b></td><td>許多（可數＋不可數）</td><td>We have plenty of time.</td></tr>
+        <tr class="fragment"><td><b>a number of</b></td><td>許多（＋可數複數）</td><td>A number of students are absent.</td></tr>
+        <tr class="fragment"><td><b>a great deal of</b></td><td>大量（＋不可數）</td><td>He spent a great deal of money.</td></tr>
+        <tr class="fragment"><td><b>the rest of</b></td><td>其餘的</td><td>The rest of the food is for you.</td></tr>
+        <tr class="fragment"><td><b>one of the + 最高級</b></td><td>最…之一</td><td>one of the best movies</td></tr>
+        <tr class="fragment"><td><b>none of</b></td><td>沒有一個</td><td>None of the answers is right.</td></tr>
+      </table>
+      <div class="vs-grid fragment" style="margin-top:.45em;">
+        <div class="vs-col left-col">
+          <div class="vs-label left">a few / few（可數）</div>
+          <ul>
+            <li><b>a few</b> = 一些（肯定）</li>
+            <li><b>few</b> = 幾乎沒有（否定）</li>
+            <li>I have <b>a few</b> questions.</li>
+          </ul>
+        </div>
+        <div class="vs-center">VS</div>
+        <div class="vs-col right-col">
+          <div class="vs-label right">a little / little（不可數）</div>
+          <ul>
+            <li><b>a little</b> = 一些（肯定）</li>
+            <li><b>little</b> = 幾乎沒有（否定）</li>
+            <li>There is <b>a little</b> milk.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. 容器量詞 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">名詞片語 2/2</span>
+      <h2>容器量詞 a + 量詞 + of</h2>
+      <div class="adv-grid c4">
+        <div class="adv-card fragment">
+          <div class="adv-icon">📄</div>
+          <div class="adv-title">a piece of</div>
+          <div class="adv-desc">paper / advice<br>news / cake</div>
+        </div>
+        <div class="adv-card orange fragment">
+          <div class="adv-icon">👟</div>
+          <div class="adv-title">a pair of</div>
+          <div class="adv-desc">shoes / glasses<br>jeans / scissors</div>
+        </div>
+        <div class="adv-card green fragment">
+          <div class="adv-icon">🍞</div>
+          <div class="adv-title">a slice of</div>
+          <div class="adv-desc">bread / meat<br>pizza</div>
+        </div>
+        <div class="adv-card amber fragment">
+          <div class="adv-icon">🥛</div>
+          <div class="adv-title">a cup / glass of</div>
+          <div class="adv-desc">tea / coffee<br>water / juice</div>
+        </div>
+      </div>
+      <div class="tip fragment">
+        ✏️ <b>重點</b>：不可數名詞要表達數量，一定要加量詞。
+        water → <b>a bottle of</b> water；advice → <b>a piece of</b> advice
+      </div>
+      <div class="ex-box fragment">
+        <b>片語組成</b>：限定詞 ＋（形容詞）＋ 名詞<br>
+        my <b>big blue box</b>｜the <b>young man</b>｜a <b>used car</b><br>
+        <span class="zh">the + 形容詞 = ～的人（當複數）：the rich、the poor、the blind</span>
+      </div>
+    </section>
+
+    <!-- ============ 6. 章節：動詞片語 ============ -->
+    <section class="bg-aurora">
+      <div class="chap">
+        <div class="no">PART 02</div>
+        <div class="big-ico">⚡</div>
+        <h1>動詞片語</h1>
+        <p class="desc">Phrasal Verbs ／ look · take · get · give · put · turn…</p>
+      </div>
+    </section>
+
+    <!-- ============ 7. look / take ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">動詞片語 1/4</span>
+      <h2>look 系列 vs take 系列</h2>
+      <table class="ptable">
+        <tr><th style="width:30%">look 系列</th><th>意思</th><th style="width:30%">take 系列</th><th>意思</th></tr>
+        <tr class="fragment"><td><b>look for</b></td><td>尋找</td><td><b>take care of</b></td><td>照顧</td></tr>
+        <tr class="fragment"><td><b>look after</b></td><td>照顧</td><td><b>take part in</b></td><td>參加</td></tr>
+        <tr class="fragment"><td><b>look up</b></td><td>查（字典）</td><td><b>take off</b></td><td>起飛／脫掉</td></tr>
+        <tr class="fragment"><td><b>look forward to</b></td><td>期待</td><td><b>take place</b></td><td>發生（不用被動）</td></tr>
+        <tr class="fragment"><td><b>look out</b></td><td>小心</td><td><b>take pride in</b></td><td>以…為榮</td></tr>
+      </table>
+      <div class="ex-box fragment">
+        I'm <b>looking for</b> my keys.　我在找我的鑰匙。<br>
+        <b>Look up</b> the word in the dictionary.　查字典裡這個字。<br>
+        The plane will <b>take off</b> at 3:00.　飛機三點起飛。<br>
+        The story <b>took place</b> in Japan.　故事發生在日本。
+      </div>
+      <div class="tip fragment">🎯 <b>考點</b>：look forward <b>to</b> 的 to 是介係詞，後面要接 <b>V-ing</b>：look forward to <b>seeing</b> you</div>
+    </section>
+
+    <!-- ============ 8. get / give / put / turn ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">動詞片語 2/4</span>
+      <h2>get · give · put · turn 高頻 12 條</h2>
+      <div class="adv-grid c4">
+        <div class="adv-card fragment">
+          <div class="adv-icon">🤝</div>
+          <div class="adv-title">get 系列</div>
+          <div class="adv-desc"><b>get along with</b> 相處<br><b>get ready for</b> 準備<br><b>get over</b> 克服<br><b>get lost</b> 迷路</div>
+        </div>
+        <div class="adv-card orange fragment">
+          <div class="adv-icon">🎁</div>
+          <div class="adv-title">give 系列</div>
+          <div class="adv-desc"><b>give up</b> 放棄<br><b>give away</b> 送掉<br><b>give back</b> 歸還<br><b>give in</b> 屈服</div>
+        </div>
+        <div class="adv-card green fragment">
+          <div class="adv-icon">📦</div>
+          <div class="adv-title">put 系列</div>
+          <div class="adv-desc"><b>put off</b> 延後<br><b>put up with</b> 忍受<br><b>put on</b> 穿上／長胖<br><b>put away</b> 收好</div>
+        </div>
+        <div class="adv-card amber fragment">
+          <div class="adv-icon">🔌</div>
+          <div class="adv-title">turn 系列</div>
+          <div class="adv-desc"><b>turn on/off</b> 開／關<br><b>turn up/down</b> 調大／拒絕<br><b>turn into</b> 變成<br><b>turn out</b> 結果是</div>
+        </div>
+      </div>
+      <div class="ex-box fragment">
+        Never <b>give up</b> your dreams.　永遠別放棄夢想。<br>
+        The meeting was <b>put off</b> till Friday.　會議延到星期五。<br>
+        He <b>turned down</b> my offer.　他拒絕了我的提議。
+      </div>
+    </section>
+
+    <!-- ============ 9. come / break / run / made ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">動詞片語 3/4</span>
+      <h2>come · break · run 與 be made 系列</h2>
+      <table class="ptable">
+        <tr><th style="width:34%">片語</th><th style="width:24%">意思</th><th>例句</th></tr>
+        <tr class="fragment"><td><b>come up with</b></td><td>想出</td><td>We came up with a good plan.</td></tr>
+        <tr class="fragment"><td><b>come true</b></td><td>實現</td><td>Your dream will come true.</td></tr>
+        <tr class="fragment"><td><b>break down</b></td><td>故障／崩潰</td><td>My bike broke down on the way.</td></tr>
+        <tr class="fragment"><td><b>run out of</b></td><td>用完</td><td>We ran out of paper.</td></tr>
+        <tr class="fragment"><td><b>hand in</b></td><td>交出（作業）</td><td>Hand in your homework by Friday.</td></tr>
+        <tr class="fragment"><td><b>find out / work out</b></td><td>查明／解出</td><td>I need to find out the truth.</td></tr>
+      </table>
+      <div class="vs-grid fragment" style="margin-top:.4em;">
+        <div class="vs-col left-col">
+          <div class="vs-label left">be made 的四種介係詞</div>
+          <ul>
+            <li>made <b>of</b> — 看得出原料（桌子是木頭）</li>
+            <li>made <b>from</b> — 看不出原料（紙來自樹）</li>
+            <li>made <b>in</b> — 產於（made in Japan）</li>
+            <li>made <b>into</b> — 被製成（木頭做成紙）</li>
+          </ul>
+        </div>
+        <div class="vs-center">🔑</div>
+        <div class="vs-col right-col">
+          <div class="vs-label right">速記口訣</div>
+          <ul>
+            <li>看得到原料 → <b>of</b></li>
+            <li>看不到原料 → <b>from</b></li>
+            <li>產地 → <b>in</b></li>
+            <li>原材料變成品 → <b>into</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. V+O+C 句型（VIZ） ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">動詞片語 4/4</span>
+      <h2>動詞 ＋ 受詞 ＋ 補語：最容易錯的一頁</h2>
+      <div class="viz-wrap">
+        <div class="viz-box">
+          <div class="viz-layer before" id="viz-before">
+            <span class="viz-tag">錯誤</span>
+            <h3 style="color:var(--accent)">❌ 常見錯誤寫法</h3>
+            <div class="rule-list">
+              <span class="k">ask</span> me <s>wait</s> outside.<br>
+              <span class="k">make</span> him <s>to stand</s> up.<br>
+              <span class="k">want</span> she <s>go</s> home.<br>
+              <span class="k">I'd like</span> <s>buy</s> a ticket.<br>
+              <span class="k">used to</span> <s>getting</s> up early.<br>
+              <span class="k">be used to</span> <s>get</s> up early.
+            </div>
+          </div>
+          <div class="viz-layer after" id="viz-after">
+            <span class="viz-tag">正確</span>
+            <h3 style="color:var(--success)">✅ 正確用法</h3>
+            <div class="rule-list">
+              <span class="k">ask</span> me <b>to wait</b> outside.　請某人做<br>
+              <span class="k">make</span> him <b>stand</b> up.　使某人做（原形）<br>
+              <span class="k">want</span> her <b>to go</b> home.　想要某人做<br>
+              <span class="k">I'd like</span> <b>to buy</b> a ticket.　想要做<br>
+              <span class="k">used to</span> <b>get</b> up early.　過去常常<br>
+              <span class="k">be used to</span> <b>getting</b> up early.　習慣於
+            </div>
+          </div>
+          <div class="viz-divider" id="viz-divider"></div>
+        </div>
+        <input class="viz-slider" id="viz-slider" type="range" min="0" max="100" value="0">
+        <div class="viz-hint">← 拖曳滑桿，掃描線由上而下，「正確用法」逐行覆蓋「錯誤寫法」 →</div>
+      </div>
+      <div class="tip fragment">
+        ✏️ <b>口訣</b>：ask / want / tell / teach / allow → <b>to V</b>；make / let / have → <b>原形 V</b>
+        （被動要還原 to：be made <b>to</b> clean）；help → <b>(to) V</b>
+      </div>
+    </section>
+
+    <!-- ============ 11. 章節：介係詞 ============ -->
+    <section class="bg-aurora">
+      <div class="chap">
+        <div class="no">PART 03</div>
+        <div class="big-ico">📍</div>
+        <h1>介係詞片語</h1>
+        <p class="desc">Prepositional Phrases ／ 時間 · 地點 · 交通 · 常用片語</p>
+      </div>
+    </section>
+
+    <!-- ============ 12. 時間地點介係詞（VIZ） ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">介係詞片語 1/2</span>
+      <h2>時間 vs 地點介係詞：用法一次分清</h2>
+      <div class="viz-wrap">
+        <div class="viz-box" style="height:280px;">
+          <div class="viz-layer before" id="viz2-before">
+            <span class="viz-tag">時間</span>
+            <h3 style="color:var(--accent)">⏰ 時間：由小到大</h3>
+            <div class="rule-list">
+              <span class="k">at</span> + 點鐘　　at 6:00 / at night<br>
+              <span class="k">on</span> + 星期、日期　on Monday / on May 1st<br>
+              <span class="k">in</span> + 年、月、季、上下午　in 2026 / in May<br>
+              <span class="k">by</span> + 時點　到…之前（完成）<br>
+              <span class="k">for</span> + 期間　for three years（持續）
+            </div>
+          </div>
+          <div class="viz-layer after" id="viz2-after">
+            <span class="viz-tag">地點</span>
+            <h3 style="color:var(--success)">📍 地點：由大到小</h3>
+            <div class="rule-list">
+              <span class="k">in</span> + 大地方　in Taipei / in the room<br>
+              <span class="k">at</span> + 小地點　at the station / at school<br>
+              <span class="k">on</span> + 平面、樓層　on the wall / on the 3F<br>
+              <span class="k">between</span> A and B　兩者之間<br>
+              <span class="k">in front of</span> / <span class="k">behind</span>　前／後（外部）
+            </div>
+          </div>
+          <div class="viz-divider" id="viz2-divider"></div>
+        </div>
+        <input class="viz-slider" id="viz2-slider" type="range" min="0" max="100" value="0">
+        <div class="viz-hint">← 拖曳滑桿，掃描線由上而下，「地點介係詞」逐行覆蓋「時間介係詞」 →</div>
+      </div>
+      <div class="ex-box fragment">
+        My birthday is <b>on</b> May 5th.｜He was born <b>in</b> 2010.｜The meeting starts <b>at</b> 9:00.<br>
+        <b>At the age of</b> ten, he could play the piano.
+      </div>
+    </section>
+
+    <!-- ============ 13. 交通與常用片語 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">介係詞片語 2/2</span>
+      <h2>交通說法 ＋ 常考介係詞片語</h2>
+      <div class="vs-grid fragment">
+        <div class="vs-col left-col">
+          <div class="vs-label left">🚗 交通</div>
+          <ul>
+            <li><b>by</b> bus / car / train / plane（不加冠詞）</li>
+            <li><b>on</b> a bus / a train（強調某一台）</li>
+            <li><b>in</b> a car / a taxi（在車內）</li>
+            <li><b>on foot</b> 步行</li>
+            <li>go to school <b>by bike</b> ≠ ride a bike</li>
+          </ul>
+        </div>
+        <div class="vs-center">🚌</div>
+        <div class="vs-col right-col">
+          <div class="vs-label right">🧩 常考片語</div>
+          <ul>
+            <li><b>by the way</b> 順帶一提</li>
+            <li><b>in fact</b> 事實上</li>
+            <li><b>at least</b> 至少／<b>at last</b> 最後</li>
+            <li><b>on time</b> 準時／<b>in time</b> 及時</li>
+            <li><b>in danger</b> 危險中／<b>in trouble</b> 遇麻煩</li>
+          </ul>
+        </div>
+      </div>
+      <div class="adv-grid c3 fragment" style="margin-top:.5em;">
+        <div class="adv-card">
+          <div class="adv-icon">🗣️</div>
+          <div class="adv-title">in + 語文</div>
+          <div class="adv-desc">speak <b>in</b> English<br>write <b>in</b> Chinese</div>
+        </div>
+        <div class="adv-card orange">
+          <div class="adv-icon">🛠️</div>
+          <div class="adv-title">by + V-ing</div>
+          <div class="adv-desc">learn <b>by</b> listening<br>make money <b>by</b> selling</div>
+        </div>
+        <div class="adv-card green">
+          <div class="adv-icon">❗</div>
+          <div class="adv-title">because / because of</div>
+          <div class="adv-desc"><b>because</b> + 子句<br><b>because of</b> + 名詞片語</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 14. 形容詞 + 副詞片語 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">PART 04 · 05</span>
+      <h2>形容詞片語 ＋ 副詞片語</h2>
+      <table class="ptable">
+        <tr><th style="width:34%">形容詞片語（be + adj + 介係詞）</th><th>意思</th><th style="width:32%">副詞／連接副詞</th><th>意思</th></tr>
+        <tr class="fragment"><td><b>be good at</b></td><td>擅長</td><td><b>first of all</b></td><td>首先</td></tr>
+        <tr class="fragment"><td><b>be famous for</b></td><td>以…聞名</td><td><b>at least / at once</b></td><td>至少／立刻</td></tr>
+        <tr class="fragment"><td><b>be interested in</b></td><td>對…有興趣</td><td><b>however</b></td><td>然而</td></tr>
+        <tr class="fragment"><td><b>be different from</b></td><td>與…不同</td><td><b>therefore / as a result</b></td><td>因此</td></tr>
+        <tr class="fragment"><td><b>be proud of / strict with</b></td><td>以…為榮／對…嚴格</td><td><b>instead / for example</b></td><td>反而／例如</td></tr>
+        <tr class="fragment"><td><b>be popular with</b></td><td>受…歡迎</td><td><b>in addition</b></td><td>此外</td></tr>
+      </table>
+      <div class="tip fragment">
+        ✏️ <b>易錯</b>：<b>however</b> = but，但 <b>however 可放句首</b>（後加逗號），but 不行，兩者不可同時使用。
+      </div>
+      <div class="ex-box fragment">
+        Taiwan is famous <b>for</b> its night markets.　台灣以夜市聞名。<br>
+        It rained. <b>However</b>, we still went out.　下雨了，然而我們還是出去了。
+      </div>
+    </section>
+
+    <!-- ============ 15. 常考句型 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">PART 06</span>
+      <h2>會考必背句型</h2>
+      <div class="adv-grid c3">
+        <div class="adv-card fragment">
+          <div class="adv-icon">⏱️</div>
+          <div class="adv-title">It 句型</div>
+          <div class="adv-desc">It takes sb <b>time</b> to V<br>It's adj <b>for</b> sb to V<br>It's adj <b>of</b> sb to V</div>
+        </div>
+        <div class="adv-card orange fragment">
+          <div class="adv-icon">⚖️</div>
+          <div class="adv-title">比較句型</div>
+          <div class="adv-desc"><b>too</b> adj <b>to</b> V 太…而不能<br><b>so</b> adj <b>that</b> 如此…所以<br>the more…, the more…</div>
+        </div>
+        <div class="adv-card green fragment">
+          <div class="adv-icon">🔗</div>
+          <div class="adv-title">對等連接詞</div>
+          <div class="adv-desc">both A and B（複數）<br>either A <b>or</b> B（就近）<br>neither A <b>nor</b> B（就近）<br>not only A <b>but also</b> B</div>
+        </div>
+      </div>
+      <div class="ex-box fragment">
+        It <b>took</b> me two hours <b>to</b> finish the work.　我花兩小時完成工作。<br>
+        The box is <b>too</b> heavy <b>to</b> carry.　這箱子太重搬不動。<br>
+        <b>Either</b> you or I <b>am</b> wrong.　要嘛你、要嘛我錯了。（動詞與最近的主詞一致）<br>
+        How about <b>going</b> hiking? / Why not <b>try</b> again?
+      </div>
+    </section>
+
+    <!-- ============ 16. 快問快答 ============ -->
+    <section class="bg-soft">
+      <span class="sec-no">互動環節</span>
+      <h2>🔥 快問快答：點一下看答案</h2>
+      <div class="quiz-card">
+        <div class="qs">1. I can't find my keys. I'm still <em>________</em> them everywhere.</div>
+        <div class="opts"><b>(A)</b> looking after <b>(B)</b> looking up <b>(C)</b> looking for <b>(D)</b> looking forward to</div>
+        <span class="fragment ans">答案 (C) looking for 尋找</span>
+      </div>
+      <div class="quiz-card">
+        <div class="qs">2. The plane will <em>________</em> at 3:00 this afternoon.</div>
+        <div class="opts"><b>(A)</b> take place <b>(B)</b> take off <b>(C)</b> take part in <b>(D)</b> take care of</div>
+        <span class="fragment ans">答案 (B) take off 起飛</span>
+      </div>
+      <div class="quiz-card">
+        <div class="qs">3. The meeting was <em>________</em> till next Monday.</div>
+        <div class="opts"><b>(A)</b> put on <b>(B)</b> put up <b>(C)</b> put away <b>(D)</b> put off</div>
+        <span class="fragment ans">答案 (D) put off 延後</span>
+      </div>
+      <div class="quiz-card">
+        <div class="qs">4. She is good <em>________</em> mathematics.</div>
+        <div class="opts"><b>(A)</b> in <b>(B)</b> at <b>(C)</b> on <b>(D)</b> of</div>
+        <span class="fragment ans">答案 (B) be good at 擅長</span>
+      </div>
+      <div class="quiz-card fragment">
+        <div class="qs">5. My mother often makes me <em>________</em> my room every day.</div>
+        <div class="opts"><b>(A)</b> to clean <b>(B)</b> clean <b>(C)</b> cleaning <b>(D)</b> cleans</div>
+        <span class="fragment ans">答案 (B) make sb + 原形 V</span>
+      </div>
+      <div class="quiz-card fragment">
+        <div class="qs">6. I'm not used to <em>________</em> up so early in the morning.</div>
+        <div class="opts"><b>(A)</b> get <b>(B)</b> to get <b>(C)</b> getting <b>(D)</b> got</div>
+        <span class="fragment ans">答案 (C) be used to + V-ing 習慣於</span>
+      </div>
+    </section>
+
+    <!-- ============ 17. 封底：速記 20 條 ============ -->
+    <section class="bg-aurora">
+      <div class="end-slide">
+        <div class="big sm">🎯</div>
+        <h1 style="color:var(--accent2); font-size:1.6em;">考前速記 20 條</h1>
+        <div class="memo" style="margin-top:.5em;">
+          <div>① <b>look forward to</b> + V-ing</div>
+          <div>⑪ <b>come up with</b> 想出</div>
+          <div>② <b>take part in</b> 參加</div>
+          <div>⑫ <b>give up</b> 放棄</div>
+          <div>③ <b>take care of</b> 照顧</div>
+          <div>⑬ <b>put off</b> 延後</div>
+          <div>④ <b>be good at</b> 擅長</div>
+          <div>⑭ <b>get along with</b> 相處</div>
+          <div>⑤ <b>be interested in</b> 有興趣</div>
+          <div>⑮ <b>in front of</b> 在…前面</div>
+          <div>⑥ <b>be famous for</b> 以…聞名</div>
+          <div>⑯ <b>because of</b> + 名詞片語</div>
+          <div>⑦ <b>be different from</b> 不同</div>
+          <div>⑰ <b>by the way</b> 順帶一提</div>
+          <div>⑧ <b>be popular with</b> 受歡迎</div>
+          <div>⑱ <b>at least / on time</b></div>
+          <div>⑨ <b>run out of</b> 用完</div>
+          <div>⑲ <b>It takes sb to V</b></div>
+          <div>⑩ <b>break down</b> 故障</div>
+          <div>⑳ <b>would like to / used to</b></div>
+        </div>
+        <p class="tagline sm">複習方式：每天 1 大類 ＋ 自己造一個句子<br>注意 ① 介係詞後接 to V 還是 V-ing　② 可數／不可數　③ 時態一致</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    center: true,
+    progress: true,
+    controls: true,
+    slideNumber: 'c/t',
+    plugins: []
+  });
+
+  // 取得某層中每個文字行的上下邊界（回傳未經 Reveal 縮放的版面像素）
+  // 注意：Range.getClientRects() 對同一行常回傳多個重疊矩形，必須先合併，
+  //       否則重疊矩形的「中點」會落在字行中央，導致吸附點切到文字。
+  function lineRects(layer, box) {
+    var scale = box.getBoundingClientRect().height / (box.offsetHeight || 1);
+    if (!scale) scale = 1;
+    var boxTop = box.getBoundingClientRect().top;
+    var raw = [];
+    var nodes = layer.querySelectorAll('h3, .rule-list');
+    for (var i = 0; i < nodes.length; i++) {
+      var rg = document.createRange();
+      rg.selectNodeContents(nodes[i]);
+      var rs = rg.getClientRects();
+      for (var j = 0; j < rs.length; j++) {
+        raw.push([
+          (rs[j].top - boxTop) / scale,
+          (rs[j].bottom - boxTop) / scale
+        ]);
+      }
+    }
+    raw.sort(function (a, b) { return a[0] - b[0]; });
+    // 合併重疊／相鄰的矩形，每個實際文字行只留一個矩形
+    var rects = [];
+    for (var k = 0; k < raw.length; k++) {
+      var r = raw[k];
+      if (rects.length && r[0] <= rects[rects.length - 1][1] + 0.5) {
+        if (r[1] > rects[rects.length - 1][1]) rects[rects.length - 1][1] = r[1];
+      } else {
+        rects.push([r[0], r[1]]);
+      }
+    }
+    return rects;
+  }
+
+  // 兩層共有的「行間隙」= 可以安全切割的位置
+  function cutPoints(afterEl, beforeEl, box, H) {
+    function gaps(rects) {
+      var g = [];
+      for (var i = 0; i < rects.length - 1; i++) {
+        var mid = (rects[i][1] + rects[i + 1][0]) / 2;
+        if (mid > 6 && mid < H - 6) g.push(mid);
+      }
+      return g;
+    }
+    var a = gaps(lineRects(afterEl, box));
+    var b = gaps(lineRects(beforeEl, box));
+    var out = [0, H];
+    var tol = Math.max(6, H * 0.03);
+    for (var i = 0; i < a.length; i++) {
+      for (var j = 0; j < b.length; j++) {
+        if (Math.abs(a[i] - b[j]) <= tol) { out.push(a[i]); break; }
+      }
+    }
+    return out.sort(function (x, y) { return x - y; });
+  }
+
+  // 通用滑桿：掃描線只停在行間隙，任一行都只會完整屬於其中一層，不會被切成兩半
+  function bindSlider(id, beforeId, afterId, dividerId) {
+    var s = document.getElementById(id);
+    if (!s) return;
+    var afterEl = document.getElementById(afterId);
+    var beforeEl = document.getElementById(beforeId);
+    var div = document.getElementById(dividerId);
+
+    function apply() {
+      var box = s.parentNode.querySelector('.viz-box');
+      if (!box) return;
+      var H = box.offsetHeight;
+      if (!H || H < 20) return;           // 投影片未顯示時不干擾，維持 CSS 初始狀態
+      var target = (+s.value / 100) * H;
+
+      var cuts = cutPoints(afterEl, beforeEl, box, H);
+      var y = cuts[0];
+      for (var i = 1; i < cuts.length; i++) {
+        if (Math.abs(cuts[i] - target) < Math.abs(y - target)) y = cuts[i];
+      }
+
+      afterEl.style.clipPath = 'inset(0 0 ' + (H - y) + 'px 0)';
+      beforeEl.style.clipPath = 'inset(' + y + 'px 0 0 0)';
+      div.style.top = y + 'px';
+      s.value = Math.round((y / H) * 100);   // 讓滑桿頭也對齊吸附後的位置
+    }
+
+    s.addEventListener('input', apply);
+    apply();
+  }
+  bindSlider('viz-slider', 'viz-before', 'viz-after', 'viz-divider');
+  bindSlider('viz2-slider', 'viz2-before', 'viz2-after', 'viz2-divider');
+</script>
+
+</body>
+</html>
